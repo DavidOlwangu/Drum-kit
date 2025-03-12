@@ -1,15 +1,32 @@
+//Get the number of drum buttons
+//Loop through all the drum buttons
 var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
+//Detects Button clicks and adds event listener to play sound
 for (var i = 0; i < numberOfDrumButtons; i++){
     document.querySelectorAll(".drum")[i].addEventListener("click", function(){
+        //Get the innerHTML of the button that got clicked
         var buttonInnerHtml = this.innerHTML;
 
+        //Log the innerHTML of the button that got clicked
         console.log("Button Clicked:", buttonInnerHtml);
+
+        //Play the corresponding sound
         makeSound(buttonInnerHtml);
+
+        //Animate the button that got clicked
         buttonAnimation(buttonInnerHtml);
     });
 }
+// Detects Keyboard key press and adds event listener to play sound
+document.addEventListener("keydown", function(event){
+    //Play corresponding sound for the key pressed
+    makeSound(event.key);
 
+    //Play animation for the key pressed
+    buttonAnimation(event.key);
+});
+//Function to play sound based on the key pressed
     function makeSound(key){
         switch (key) {
             case "w":
@@ -50,13 +67,17 @@ for (var i = 0; i < numberOfDrumButtons; i++){
             default:console.log("Invalid key:", key);
         }
     }
-
+//Function to animate the button that got clicked
 function buttonAnimation(currentKey){
+    //Get the button that corresponds to the key that got clicked
     var activeButton = document.querySelector("." + currentKey);
 
+    //If there is a button for the key that got clicked, animate it/add "pressed" class to it
     if (activeButton){
         console.log("Animating:", currentKey);
         activeButton.classList.add("pressed");
+
+        //Remove the "pressed" class after 100ms
         setTimeout(function(){
             activeButton.classList.remove("pressed");
     }, 100);
