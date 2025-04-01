@@ -1,0 +1,21 @@
+{
+  "name": "drumkit",
+  "version": "1.0.0",
+  "description": "\"# Drum-kit-project\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidOlwangu/Drum-kit-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidOlwangu/Drum-kit-project/issues"
+  },
+  "homepage": "https://github.com/DavidOlwangu/Drum-kit-project#readme"
+}
